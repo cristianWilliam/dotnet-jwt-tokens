@@ -1,6 +1,6 @@
 namespace dotnet_jwt_tokens.Db;
 
-internal sealed class Poder
+public sealed class Poder
 {
     public string Descricao { get; init; }
 

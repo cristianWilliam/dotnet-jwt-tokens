@@ -13,7 +13,11 @@ internal static class BancoHerois
         return [batman, superMan, flash];
     }
 
-    private static Poder PodeVoar() => new("pode-voar");
-    private static Poder SuperVelocidade() => new("super-velocidade");
-    private static Poder SuperInteligente() => new("super-inteligente");
+    private static Poder PodeVoar() => new(PODE_VOAR);
+    private static Poder SuperVelocidade() => new(SUPER_VELOCIDADE);
+    private static Poder SuperInteligente() => new(SUPER_INTELIGENTE);
+    
+    public const string SUPER_INTELIGENTE = "Super-Inteligente";
+    public const string PODE_VOAR = "pode-voar";
+    public const string SUPER_VELOCIDADE = "Super-Velocidade";
 }
