@@ -65,7 +65,7 @@ public sealed class MissaoController : ControllerBase
 
     [Authorize]
     [HttpGet("somente-heroi")]
-    public string SomenteHeroi() => "Voce é heroi";
+    public CommonResponse SomenteHeroi() => new("Voce é heroi");
     
     [Authorize(Roles = BancoHerois.PODE_VOAR)]
     [HttpGet("pode-voar")]
@@ -76,6 +76,7 @@ public sealed class MissaoController : ControllerBase
     public string InvestigarCrime() => "Missao completa";
 }
 
+public record CommonResponse(string Message);
 public record LoginRequest(string Heroi);
 public record RefreshTokenRequest(string RefreshToken);
 

@@ -41,7 +41,7 @@ internal sealed class TokenManager : ITokenManager
             issuer: jwtSettings.GetValue<string>("Issuer"), // Quem emite
             audience: jwtSettings.GetValue<string>("Audience"), // Quem consume
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(tempoExpiracaoInMinutes),
+            expires: DateTime.UtcNow.AddSeconds(5),
             signingCredentials: new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256));
         
         return new JwtSecurityTokenHandler().WriteToken(token);
